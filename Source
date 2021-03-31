@@ -1,0 +1,171 @@
+#include <iostream>
+#include <ctime>
+#include <Windows.h>
+#include <string>
+
+using namespace std;
+
+// Protypes
+void draw_dice(int player_roll, int computer_roll);
+void draw_random_dice();
+
+int main() {
+	// Random Fucntion
+	srand(time(NULL));
+
+	// Initalizing Variables
+	int player_roll, computer_roll, player_wins = 0, computer_wins = 0;
+	string playing = "yes";
+
+
+	cout << "Lets roll some dice! It's simple there is one rule... " << endl;
+	cout << "The highest dice roll WINS!" << endl;
+
+	// Game Loop
+	while (playing == "yes") {
+		// Calculating the Rolls
+		player_roll = rand() % 7;
+		computer_roll = rand() % 7;
+
+		// Making sure you cant roll a 0
+		if (player_roll == 0) {
+			player_roll++;
+		}
+		if (computer_roll == 0) {
+			computer_roll++;
+		}
+
+		Sleep(1000);
+		cout << "3..."; Sleep(1000); cout << "2..."; Sleep(1000); cout << "1..."; Sleep(1000); cout << "ROLL!" << endl;
+		Sleep(1000);
+
+		// Drawing Animation
+		draw_random_dice();
+
+		// Drawing the Correct Dice
+		draw_dice(player_roll, computer_roll);
+		cout << "\nYou rolled a " << player_roll << endl;
+		Sleep(1000);
+		cout << "I got a " << computer_roll << endl;
+
+		// Win/Lose Conditions
+		if (computer_roll > player_roll) {
+			cout << "HAHA I WIN!" << endl;
+			computer_wins++;
+		}
+		else if (player_roll > computer_roll) {
+			cout << "WOW! YOU WIN!" << endl;
+			player_wins++;
+		}
+		else {
+			cout << "We tied...";
+		}
+		cout << "The score is " << player_wins << " to " << computer_wins << endl;
+
+		// Asking to play again
+		cout << "If you want to play again type 'yes': ";
+		cin >> playing;
+	}	
+	cout << "Thanks for playing!";
+}
+
+void draw_random_dice() {
+
+	// Drawing of Each dice and assigning them to strings
+	string dice_one =   " _______ \n"
+				     					"|       |\n"
+				     					"|   0   |\n"
+					     				"|_______|\n";
+
+	string dice_two =   " _______ \n"
+					     				"| 0     |\n"
+				     					"|       |\n"
+				     					"|_____0_|\n";
+
+	string dice_three = " _______ \n"
+				     					"| 0     |\n"
+				     					"|   0   |\n"
+				     					"|_____0_|\n";
+
+	string dice_four =  " _______ \n"
+		     							"| 0   0 |\n"
+			     						"|       |\n"
+				     					"|_0___0_|\n";
+
+	string dice_five =  " _______ \n"
+			     						"| 0   0 |\n"
+			     						"|   0   |\n"
+			     						"|_0___0_|\n";
+
+	string dice_six =   " _______ \n"
+			     						"| 0   0 |\n"
+				     					"| 0   0 |\n"
+				     					"|_0___0_|\n";
+
+	// Creating an array with the strings
+	string dice[6] = { dice_one, dice_two, dice_three, dice_four, dice_five, dice_six };
+
+	// Cycling through random dice and drawing them to create an animation
+	for (int x = 1; x <= 15; x++) {
+		int i;
+		i = rand() % 6;
+		if (i == 0) {
+			i = 1;
+		}
+		system("cls");
+		cout << dice[i] << dice[i];
+		Sleep(200);
+	}
+	system("cls");
+}
+
+void draw_dice(int player_roll, int computer_roll) {
+
+	int x, y;
+
+	// Drawing each of the Dice
+	string dice_one =   " _______ \n"
+				     					"|       |\n"
+				     					"|   0   |\n"
+				     					"|_______|\n";
+
+	string dice_two =   " _______ \n"
+				     					"| 0     |\n"
+				     					"|       |\n"
+					     				"|_____0_|\n";
+
+	string dice_three = " _______ \n"
+				     					"| 0     |\n"
+				     					"|   0   |\n"
+				     					"|_____0_|\n";
+
+	string dice_four =  " _______ \n"
+				     					"| 0   0 |\n"
+				     					"|       |\n"
+				     					"|_0___0_|\n";
+
+	string dice_five =  " _______ \n"
+				     					"| 0   0 |\n"
+				     					"|   0   |\n"
+				     					"|_0___0_|\n";
+
+	string dice_six =   " _______ \n"
+			          			"| 0   0 |\n"
+				     					"| 0   0 |\n"
+				     					"|_0___0_|\n";
+
+	// Creating an array with the dice
+	string dice[6] = { dice_one, dice_two, dice_three, dice_four, dice_five, dice_six };
+
+	// Getting the correct number in the array
+	x = player_roll - 1;
+	y = computer_roll - 1;
+	if (player_roll < 0) {
+		x = 1;
+	}
+	if (computer_roll < 0) {
+		y = 1;
+	}
+	// Selecting the Correct dice to draw
+	cout << dice[x] << dice[y];
+}
