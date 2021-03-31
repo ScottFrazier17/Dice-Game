@@ -73,34 +73,34 @@ void draw_random_dice() {
 
 	// Drawing of Each dice and assigning them to strings
 	string dice_one =   " _______ \n"
-				     					"|       |\n"
-				     					"|   0   |\n"
-					     				"|_______|\n";
+			    "|       |\n"
+			    "|   0   |\n"
+			    "|_______|\n";
 
 	string dice_two =   " _______ \n"
-					     				"| 0     |\n"
-				     					"|       |\n"
-				     					"|_____0_|\n";
+			    "| 0     |\n"
+			    "|       |\n"
+			    "|_____0_|\n";
 
 	string dice_three = " _______ \n"
-				     					"| 0     |\n"
-				     					"|   0   |\n"
-				     					"|_____0_|\n";
+			    "| 0     |\n"
+			    "|   0   |\n"
+			    "|_____0_|\n";
 
 	string dice_four =  " _______ \n"
-		     							"| 0   0 |\n"
-			     						"|       |\n"
-				     					"|_0___0_|\n";
+			    "| 0   0 |\n"
+			    "|       |\n"
+			    "|_0___0_|\n";
 
-	string dice_five =  " _______ \n"
-			     						"| 0   0 |\n"
-			     						"|   0   |\n"
-			     						"|_0___0_|\n";
+	string dice_five =   " _______ \n"
+			     "| 0   0 |\n"
+			     "|   0   |\n"
+			     "|_0___0_|\n";
 
 	string dice_six =   " _______ \n"
-			     						"| 0   0 |\n"
-				     					"| 0   0 |\n"
-				     					"|_0___0_|\n";
+			    "| 0   0 |\n"
+			    "| 0   0 |\n"
+			    "|_0___0_|\n";
 
 	// Creating an array with the strings
 	string dice[6] = { dice_one, dice_two, dice_three, dice_four, dice_five, dice_six };
@@ -125,34 +125,34 @@ void draw_dice(int player_roll, int computer_roll) {
 
 	// Drawing each of the Dice
 	string dice_one =   " _______ \n"
-				     					"|       |\n"
-				     					"|   0   |\n"
-				     					"|_______|\n";
+			    "|       |\n"
+			    "|   0   |\n"
+			    "|_______|\n";
 
 	string dice_two =   " _______ \n"
-				     					"| 0     |\n"
-				     					"|       |\n"
-					     				"|_____0_|\n";
+			    "| 0     |\n"
+			    "|       |\n"
+			    "|_____0_|\n";
 
 	string dice_three = " _______ \n"
-				     					"| 0     |\n"
-				     					"|   0   |\n"
-				     					"|_____0_|\n";
+			    "| 0     |\n"
+			    "|   0   |\n"
+			    "|_____0_|\n";
 
 	string dice_four =  " _______ \n"
-				     					"| 0   0 |\n"
-				     					"|       |\n"
-				     					"|_0___0_|\n";
+			    "| 0   0 |\n"
+			    "|       |\n"
+			    "|_0___0_|\n";
 
 	string dice_five =  " _______ \n"
-				     					"| 0   0 |\n"
-				     					"|   0   |\n"
-				     					"|_0___0_|\n";
+			    "| 0   0 |\n"
+			    "|   0   |\n"
+			    "|_0___0_|\n";
 
 	string dice_six =   " _______ \n"
-			          			"| 0   0 |\n"
-				     					"| 0   0 |\n"
-				     					"|_0___0_|\n";
+			    "| 0   0 |\n"
+			    "| 0   0 |\n"
+			    "|_0___0_|\n";
 
 	// Creating an array with the dice
 	string dice[6] = { dice_one, dice_two, dice_three, dice_four, dice_five, dice_six };
